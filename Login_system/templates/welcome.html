@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .centered {
+
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 75px;
+  color: white;
+}
+.my-button {
+        background-color: rgb(246, 132, 9);
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+.center {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+        height: 5vh;
+      }
+    </style>
+ <script>
+    function hide(){
+        var button = document.getElementById("my-button");
+        button.style.display = "none";
+    }
+</script>
+
+</head>
+<body>
+    <!-- <h1> You are sucessfully logged in and your details are saved in data base you can use the website  now</h1> -->
+    <!-- <img src="{{ url_for('static', filename='images/bg.jpg') }}" alt="background" width="1700"height="1000"> -->
+    <div class="center">
+    {% with messages = get_flashed_messages() %}   
+      {% if messages %}
+         <!-- {{ messages }} -->
+         <button id="my-button" class="my-button" onclick="hide()" style="color:black">{{ messages }}</button>
+  
+      {% endif %}
+    {% endwith %}
+    
+    </div>
+    <div class="container"><!--affect all elements inside div class -->
+        <img src="{{ url_for('static', filename='images/bg.jpg') }}" alt="img" style="width:100%;">
+        <div class="centered"><b>You are sucessfully logged in and your details are saved in the  data base </b></div>
+        </div>
+
+</body>
+</html>
