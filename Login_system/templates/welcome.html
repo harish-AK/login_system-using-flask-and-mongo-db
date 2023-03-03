@@ -6,10 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+      .cls2 {
+			position: absolute;
+			top: 125%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: #07c016;
+			color: rgb(12, 2, 2);
+			padding: 10px 10px;
+            border: 5px solid black;
+
+			cursor: pointer;
+            
+        }
+        .cls2:hover {
+  background-color: rgb(250, 95, 75);
+}
         .centered {
 
   position: absolute;
-  top: 60%;
+  top:45%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 75px;
@@ -29,6 +45,14 @@
         padding-right: 20px;
         height: 5vh;
       }
+      .container {
+			position: fixed;
+			display:block;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+        }
     </style>
  <script>
     function hide(){
@@ -42,6 +66,7 @@
     <!-- <h1> You are sucessfully logged in and your details are saved in data base you can use the website  now</h1> -->
     <!-- <img src="{{ url_for('static', filename='images/bg.jpg') }}" alt="background" width="1700"height="1000"> -->
     <div class="center">
+      {% block content %}
     {% with messages = get_flashed_messages() %}   
       {% if messages %}
          <!-- {{ messages }} -->
@@ -53,8 +78,11 @@
     </div>
     <div class="container"><!--affect all elements inside div class -->
         <img src="{{ url_for('static', filename='images/bg.jpg') }}" alt="img" style="width:100%;">
-        <div class="centered"><b>You are sucessfully logged in and your details are saved in the  data base </b></div>
+        <div class="centered"><b>You are sucessfully logged in and your details are saved in the  data base </b>
+          <a href="/upload/{{user}}">
+            <button class="cls2"><b>upload your images</b></button>
+        </a>        </div>
         </div>
-
+      {% endblock %}
 </body>
 </html>
