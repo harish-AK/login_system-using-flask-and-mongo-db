@@ -8,9 +8,11 @@ Signup: Users can create an account by entering a display name, username, email,
 
 Login: Users log in with their username and password. The password is checked using check_password_hash to match the hashed version in the database. If the login is successful, the session is set, and they are redirected to the welcome page.
 
-## Session Management: I use Flask's session to keep track of whether a user is logged in. I also created a login_required decorator to protect routes that should only be accessible when logged in.
+## Session Management: 
+I use Flask's session to keep track of whether a user is logged in. I also created a login_required decorator to protect routes that should only be accessible when logged in.
 
-Logout: Users can log out, which clears their session and sends them back to the home page.
+## Logout: 
+Users can log out, which clears their session and sends them back to the home page.
 
 ## Techniques:
 Flask for setting up the routes and handling requests.
