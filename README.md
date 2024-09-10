@@ -18,3 +18,8 @@ MongoDB (via PyMongo) for storing user info, including hashed passwords.
 Werkzeug's password hashing to securely hash and verify passwords.
 Session management to handle user login status.
 Flash messages to give feedback like "Signup successful" or "Invalid username or password."
+
+## DEMO:
+
+https://github.com/user-attachments/assets/6cc40f6b-810c-41f8-af6a-75c71444d962
+
